@@ -122,8 +122,9 @@ app.delete('/products/:id', (req, res) => {
     return entity.destroy()
   })
   .then(_ => {
+    // _ is the same as () here, js doesn t care
     // respond with the changed product and status code 200 OK
-    res.staus(200).send({
+    res.status(200).send({
       message: 'The product was deleted succesfully'
     })
   })
