@@ -1,10 +1,12 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const productsRouter = require('./products/router')
+const usersRouter = require('./users/router')
 const app = express()
 
 app.use(bodyParser.json())
 app.use(productsRouter)
+app.use(usersRouter)
 
 const port = process.env.PORT || 4001
 app.listen(port, () => console.log('Express API listening on port 4001'))
