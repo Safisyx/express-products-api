@@ -28,7 +28,8 @@ const Product = sequelize.define('product', {
   timestamps: false
 })
 
-app.listen(4001, () => console.log('Express API listening on port 4001'))
+const port = process.env.PORT || 4001
+app.listen(port, () => console.log('Express API listening on port 4001'))
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
